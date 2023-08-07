@@ -3,8 +3,17 @@ import ballerina/http;
 # A Ballerina service representing a network-accessible API
 # bound to port `9090`.
 
+type Resource record {|
+    string resourceName;
+    string resourceType;
+|};
+
+type CapabilityStatement record {|
+    Resource[] resources;
+|};
 
 configurable string greeting = ?;
+configurable CapabilityStatement capabilityStatement = ?;
 configurable map<string[]> fhirCodes = { "male" : [], "female" : [], "unknown" : []};
 
 service / on new http:Listener(9090) {
