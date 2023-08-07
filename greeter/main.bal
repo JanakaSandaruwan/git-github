@@ -5,6 +5,7 @@ import ballerina/http;
 
 
 configurable string greeting = ?;
+configurable map<string[]> fhirCodes = { "male" : [], "female" : [], "unknown" : []};
 
 service / on new http:Listener(9090) {
 
