@@ -12,7 +12,7 @@ type CapabilityStatement record {|
     Resource[] resources;
 |};
 
-configurable string greeting = ?;
+// configurable string greeting = ?;
 configurable CapabilityStatement capabilityStatement = ?;
 // configurable map<string[]> fhirCodes = { "male" : [], "female" : [], "unknown" : []};
 
@@ -26,6 +26,6 @@ service / on new http:Listener(9090) {
         if name is "" {
             return error("name should not be empty!");
         }
-        return greeting + ", " + name;
+        return name;
     }
 }
