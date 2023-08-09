@@ -14,7 +14,7 @@ import ballerina/http;
 
 // configurable string greeting = ?;
 // configurable CapabilityStatement capabilityStatement = ?;
-configurable map<string[]> fhirCodes = { "male" : [], "female" : [], "unknown" : []};
+configurable map<string[]> fhirCodes12 = { "male" : [], "female" : [], "unknown" : []};
 
 service / on new http:Listener(9090) {
 
