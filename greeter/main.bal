@@ -17,6 +17,7 @@ import ballerina/http;
 // configurable map<string[]> kamal = ?;
 configurable string arr = ?;
 configurable string str = ?;
+configurable string[] str1 = ?;
 // configurable Resource resourceRecord = ?;
 
 
