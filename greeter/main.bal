@@ -13,7 +13,7 @@ type CapabilityStatement record {|
 |};
 
 // configurable string greeting = ?;
-configurable CapabilityStatement capabilityStatement = ?;
+configurable CapabilityStatement capabilityStatement1 = ?;
 configurable map<string[]> kamal = ?;
 configurable string[] arr = ?;
 configurable string str = ?;
