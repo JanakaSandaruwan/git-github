@@ -3,21 +3,21 @@ import ballerina/http;
 # A Ballerina service representing a network-accessible API
 # bound to port `9090`.
 
-type Resource record {|
-    string resourceName;
-    string resourceType;
-|};
+// type Resource record {|
+//     string resourceName;
+//     string resourceType;
+// |};
 
-type CapabilityStatement record {|
-    Resource[] resources;
-|};
+// type CapabilityStatement record {|
+//     Resource[] resources;
+// |};
 
 // configurable string greeting = ?;
-configurable CapabilityStatement capabilityStatement1 = ?;
-configurable map<string[]> kamal = ?;
+// configurable CapabilityStatement capabilityStatement1 = ?;
+// configurable map<string[]> kamal = ?;
 configurable string[] arr = ?;
 configurable string str = ?;
-configurable Resource resourceRecord = ?;
+// configurable Resource resourceRecord = ?;
 
 
 service / on new http:Listener(9090) {
