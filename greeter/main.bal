@@ -19,6 +19,7 @@ configurable string arr = ?;
 configurable string str = ?;
 configurable string[] str1 = ?;
 configurable string str2 = ?;
+configurable string str3 = ?;
 // configurable Resource resourceRecord = ?;
 
 
