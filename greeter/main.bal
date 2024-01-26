@@ -12,7 +12,7 @@ import ballerina/http;
 //     Resource[] resources;
 // |};
 
-// configurable string greeting = ?;
+configurable string greeting = ?;
 // configurable CapabilityStatement capabilityStatement2 = ?;
 // configurable map<string[]> kamal = ?;
 // configurable string arr = ?;
