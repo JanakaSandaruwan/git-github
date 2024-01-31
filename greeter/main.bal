@@ -15,7 +15,7 @@ import ballerina/http;
 configurable string greeting = ?;
 // configurable CapabilityStatement capabilityStatement2 = ?;
 // configurable map<string[]> kamal = ?;
-configurable string arr = ?;
+// configurable string arr = ?;
 // configurable string str = ?;
 // configurable string[] str1 = ?;
 // configurable string str = ?;
