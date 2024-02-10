@@ -1,6 +1,7 @@
 import ballerina/http;
 
 # A Ballerina service representing a network-accessible API
+# test comment
 # bound to port `9090`.
 
 // type Resource record {|
