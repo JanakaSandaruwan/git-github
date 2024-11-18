@@ -2,6 +2,7 @@ import ballerina/http;
 
 
 configurable string str = ?;
+configurable string[][] strArr = ?;
 
 
 service / on new http:Listener(9090) {
