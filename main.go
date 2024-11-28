@@ -45,7 +45,8 @@ func main() {
 
 	// Configure TLS settings
 	tlsConfig := &tls.Config{
-		RootCAs: caCertPool,
+		RootCAs:    caCertPool,
+		ServerName: customHostHeader,
 	}
 	if disableTLSVerification {
 		log.Println("TLS verification is disabled")
