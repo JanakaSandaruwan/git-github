@@ -75,7 +75,7 @@ func main() {
 
 	// Set the custom Host header if provided
 	if customHostHeader != "" {
-		req.Header.Set("Host", customHostHeader)
+		req.Host = customHostHeader
 		log.Printf("Using custom Host header: %s", customHostHeader)
 	}
 
