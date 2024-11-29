@@ -1,0 +1,6 @@
+schemaVersion: 1.0 
+endpoints:
+- name: go-proxy
+  service:
+     port: 8080
+  type: REST
