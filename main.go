@@ -2,8 +2,6 @@ package main
 
 import (
 	"crypto/tls"
-	"crypto/x509"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"net/http/httputil"
@@ -20,30 +18,12 @@ func main() {
 		log.Fatalf("Invalid TARGET_SERVER_URL: %v", err)
 	}
 
-	// Get the CA certificate path from environment variable
-	caCertPath := os.Getenv("CA_CERT_PATH")
-	if caCertPath == "" {
-		log.Fatal("Environment variable CA_CERT_PATH is not set")
-	}
-
 	// Get options to disable TLS and host verification
 	disableTLSVerification := getEnvAsBool("DISABLE_TLS_VERIFICATION", false)
 	disableHostVerification := getEnvAsBool("DISABLE_HOST_VERIFICATION", false)
 
 	// Get the custom Host header value
 	customHostHeader := os.Getenv("CUSTOM_HOST_HEADER")
-
-	// Load the server's CA certificate
-	caCert, err := ioutil.ReadFile(caCertPath)
-	if err != nil {
-		log.Fatalf("Failed to read CA certificate: %v", err)
-	}
-
-	// Create a certificate pool and append the CA cert
-	caCertPool := x509.NewCertPool()
-	if !caCertPool.AppendCertsFromPEM(caCert) {
-		log.Fatal("Failed to append CA certificate to pool")
-	}
 
 	// Configure TLS settings
 	tlsConfig := &tls.Config{
