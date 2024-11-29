@@ -4,3 +4,5 @@ endpoints:
   service:
      port: 8080
   type: REST
+  networkVisibilities: 
+    - Project
