@@ -3,19 +3,21 @@ package main
 import (
 	"crypto/tls"
 	"crypto/x509"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"net/http/httputil"
+	"net/url"
 	"os"
 	"strconv"
 )
 
 func main() {
 	// Get the server URL from environment variable
-	url := os.Getenv("SERVER_URL")
-	if url == "" {
-		log.Fatal("Environment variable SERVER_URL is not set")
+	targetUrl := os.Getenv("TARGET_SERVER_URL")
+	targetURL, err := url.Parse(targetUrl)
+	if err != nil {
+		log.Fatalf("Invalid TARGET_SERVER_URL: %v", err)
 	}
 
 	// Get the CA certificate path from environment variable
@@ -57,42 +59,28 @@ func main() {
 		tlsConfig.VerifyPeerCertificate = nil
 	}
 
-	// Create a custom HTTP transport using the TLS config
-	transport := &http.Transport{
+	proxy := httputil.NewSingleHostReverseProxy(targetURL)
+	proxy.Transport = &http.Transport{
 		TLSClientConfig: tlsConfig,
 	}
 
-	// Create an HTTP client with the transport
-	client := &http.Client{
-		Transport: transport,
-	}
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("Proxying request: %s %s", r.Method, r.URL.String())
 
-	// Create a new HTTP request
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		log.Fatalf("Failed to create HTTP request: %v", err)
-	}
+		// Rewrite the request's Host header to the target server
+		r.Host = customHostHeader
 
-	// Set the custom Host header if provided
-	if customHostHeader != "" {
-		req.Host = customHostHeader
-		log.Printf("Using custom Host header: %s", customHostHeader)
-	}
+		// Forward the request to the target server
+		proxy.ServeHTTP(w, r)
+	})
 
-	// Make the HTTP request
-	resp, err := client.Do(req)
-	if err != nil {
-		log.Fatalf("Failed to make HTTPS request: %v", err)
+	// Start the proxy server
+	port := os.Getenv("PROXY_PORT")
+	if port == "" {
+		port = "8080" // Default to port 8080 if not set
 	}
-	defer resp.Body.Close()
-
-	// Print the response
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatalf("Failed to read response body: %v", err)
-	}
-
-	fmt.Printf("Response from server:\n%s\n", body)
+	log.Printf("Starting proxy server on port %s, forwarding to %s", port, targetURL)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 // getEnvAsBool fetches an environment variable as a boolean with a default fallback
