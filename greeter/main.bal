@@ -7,7 +7,7 @@ configurable string[][][][] janaka = ?;
 type Version record {|
     string name;
     string id;
-|}
+|};
 
 type Resource record {|
      string resourceName;
