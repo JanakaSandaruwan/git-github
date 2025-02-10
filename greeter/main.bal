@@ -5,7 +5,7 @@ configurable string str = ?;
 configurable string[][] strArr = ?;
 configurable string[][][][] janaka = ?;
 type Version record {|
-    configurable string name = ?;
+    string name = ?;
     string id;
 |};
 
@@ -17,7 +17,7 @@ type Resource record {|
 
 type CapabilityStatement record {|
      Resource[] resources;
-     configurable string name = "janaka";
+     string name = "janaka";
 |};
 
 configurable string greeting = ?;
