@@ -17,7 +17,7 @@ type Resource record {|
 
 type CapabilityStatement record {|
      Resource[] resources;
-     string name = "janaka";
+     string name;
 |};
 
 configurable string greeting = ?;
