@@ -5,7 +5,7 @@ configurable string str = ?;
 configurable string[][] strArr = ?;
 configurable string[][][][] janaka = ?;
 type Version record {|
-    string name = ?;
+    string name = "janaka";
     string id;
 |};
 
