@@ -5,7 +5,7 @@ configurable string str = ?;
 configurable string[][] strArr = ?;
 configurable string[][][][] janaka = ?;
 type Version record {|
-    string name;
+    configurable string name = ?;
     string id;
 |};
 
@@ -22,6 +22,7 @@ type CapabilityStatement record {|
 
 configurable string greeting = ?;
 configurable CapabilityStatement capabilityStatement = ?;
+configurable Version parentVersion = { name: "defaultName", id: "defaultId" };
 
 
 service / on new http:Listener(9090) {
