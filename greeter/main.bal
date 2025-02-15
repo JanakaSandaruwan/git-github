@@ -3,7 +3,7 @@ import ballerina/http;
 
 configurable string str = ?;
 configurable string[][] strArr = ?;
-configurable string[][][][] janaka = ?;
+configurable string janaka = "janka";
 type Version record {|
     string name = "janaka";
     string id;
