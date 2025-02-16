@@ -2,6 +2,7 @@ import ballerina/http;
 
 
 configurable string str = ?;
+configurable boolean flag = ?;
 configurable string[][] strArr = ?;
 configurable string janaka = "janka";
 type Version record {|
