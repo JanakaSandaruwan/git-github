@@ -4,7 +4,7 @@ import ballerina/http;
 configurable string str = ?;
 configurable boolean flag = ?;
 configurable string[][] strArr = ?;
-configurable string janaka = "janka";
+configurable string janaka = "janka"; // test
 type Version record {|
     string name = "janaka";
     string id;
