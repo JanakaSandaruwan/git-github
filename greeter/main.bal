@@ -1,7 +1,7 @@
 import ballerina/http;
 
 
-configurabl string str = ?;
+configurable string str = ?;
 configurable boolean flag = ?;
 configurable string[][] strArr = ?;
 configurable string janaka = "janka"; // test
