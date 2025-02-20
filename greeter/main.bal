@@ -4,7 +4,7 @@
 configurable string str = ?;
 configurable boolean flag = ?;
 configurable string[][] strArr = ?;
-configurable string janaka = "janka"; // test new
+configurable string janaka = "janka"; // test ne
 type Version record {|
     string name = "janaka";
     string id;
