@@ -23,4 +23,4 @@ type CapabilityStatement record {|
 
 configurable string greeting = ?;
 configurable CapabilityStatement capabilityStatement = ?;
-configurable Version parentVersion = { name: "defaultName", id: "defaultId" };
+configurable Version parentVersion = { name: "defaultName", id: "defaultId" }; // test
