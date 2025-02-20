@@ -4,7 +4,7 @@
 configurable string str = ?;
 configurable boolean flag = ?;
 configurable string[][] strArr = ?;
-configurable string janaka = "janka"; // test nedf
+configurable string janaka = "janka"; // test nedfd
 type Version record {|
     string name = "janaka";
     string id;
