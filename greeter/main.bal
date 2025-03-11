@@ -3,4 +3,4 @@
 
 configurable string str = ?;
 configurable string a = ?;
-
+configurable string ba = ?;
