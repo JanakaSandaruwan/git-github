@@ -2,4 +2,5 @@
 
 
 configurable string str = ?;
+configurable string a = ?;
 
