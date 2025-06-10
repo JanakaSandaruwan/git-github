@@ -1,5 +1,5 @@
 import ballerina/io;
-import ballerina/http;
+import ballerina/http as _;
 
 type Coord record {
     int x;
