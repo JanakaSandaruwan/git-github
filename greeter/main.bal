@@ -9,6 +9,7 @@ type Coord record {
 type flexType string|int;
 
 configurable string greeting = "Hello, World!";
+configurable map<string> headers = ?;
 configurable int repeatCount = 1;
 configurable boolean isEnabled = true;
 configurable float version = 1.0;
