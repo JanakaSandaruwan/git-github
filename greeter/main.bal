@@ -17,6 +17,7 @@ configurable map<string> settings = {
     "theme": "dark",
     "language": "en"
 };
+configurable map<Coord> coordMap = ?;
 configurable Coord position = { x: 10, y: 20 };
 configurable flexType dynamicValue = "dynamic";
 configurable int[] numbers = [1, 2, 3, 4, 5];
