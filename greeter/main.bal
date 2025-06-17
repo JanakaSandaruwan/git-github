@@ -7,8 +7,8 @@ type Coord record {
 };
 
 type Database record {
-    host string;
-    port int;
+    string host;
+    int port;
 };
 
 type flexType string|int;
