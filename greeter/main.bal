@@ -33,6 +33,7 @@ import ballerina/io;
 // };
 
 configurable float pi = 3;
+configurable int num = ?;
 
 public function main() {
     io:println("Configurable value of pi: ", pi);
