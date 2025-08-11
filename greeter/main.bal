@@ -32,5 +32,5 @@ import  ballerina/http as _;
 configurable time:TimeOfDay lunchFeedbackStartTime = {hour: 11, minute: 0, second: 0};
 
 public function main() {
-    io:println("Configurable value of pi: ", pi);
+    io:println("Configurable value of pi: ", lunchFeedbackStartTime);
 }
