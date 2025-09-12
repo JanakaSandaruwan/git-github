@@ -20,7 +20,7 @@ configurable int[] | string[] repeatCount = ?;
 // configurable map<int[]> multiDimensionalMap = ?;
 // configurable decimal decimalValue = 3.14;
 // configurable string? optionalGreeting = "Optional Hello";
-// configurable [string, int, boolean] person = ["Alice", 30, true];
+configurable [string, int, boolean] person = ["Alice", 30, true];
 // configurable json jsonData = {
 //     "name": "Bob",
 //     "age": 25,
