@@ -10,7 +10,7 @@ import  ballerina/http as _;
 // type flexType string|int;
 
 // configurable string greeting = "Hello, World!";
-configurable int[] | string[] repeatCount = 1;
+configurable int[] | string[] repeatCount = ?;
 // configurable boolean isEnabled = true;
 // configurable float version = 1.0;
 // configurable map<string> settings = ?;
@@ -29,7 +29,7 @@ configurable int[] | string[] repeatCount = 1;
 
 // configurable float pi = 3;
 // configurable int num = ?;
-// configurable time:TimeOfDay lunchFeedbackStartTime = {hour: 11, minute: 0, second: 0};
+configurable time:TimeOfDay lunchFeedbackStartTime = {hour: 11, minute: 0, second: 0};
 
 public function main() {
     io:println("Configurable value of pi: ", lunchFeedbackStartTime);
