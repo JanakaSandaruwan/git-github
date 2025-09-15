@@ -12,7 +12,7 @@ import  ballerina/http as _;
 // configurable string greeting = "Hello, World!";
 configurable int[] | string[] repeatCount = ?;
 // configurable boolean isEnabled = true;
-// configurable float version = 1.0;
+configurable float version = 1.0;
 // configurable map<string> settings = ?;
 // configurable Coord position = { x: 10, y: 20 };
 // configurable flexType dynamicValue = "dynamic";
