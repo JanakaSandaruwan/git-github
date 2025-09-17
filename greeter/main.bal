@@ -1,6 +1,6 @@
 import ballerina/io;
 import ballerina/time;
-import  ballerina/http as _;
+// import  ballerina/http as _;
 
 // type Coord record {
 //     int x;
@@ -9,8 +9,8 @@ import  ballerina/http as _;
 
 // type flexType string|int;
 
-// configurable string greeting = "Hello, World!";
-configurable int[] | string[] repeatCount = ?;
+configurable string greeting = "Hello, World!";
+// configurable int[] | string[] repeatCount = ?;
 // configurable boolean isEnabled = true;
 configurable float version = 1.0;
 // configurable map<string> settings = ?;
@@ -20,15 +20,15 @@ configurable float version = 1.0;
 // configurable map<int[]> multiDimensionalMap = ?;
 // configurable decimal decimalValue = 3.14;
 // configurable string? optionalGreeting = "Optional Hello";
-configurable [string, int, boolean] person = ["Alice", 30, true];
+// configurable [string, int, boolean] person = ["Alice", 30, true];
 // configurable json jsonData = {
 //     "name": "Bob",
 //     "age": 25,
 //     "isActive": true
 // };
 
-// configurable float pi = 3;
-// configurable int num = ?;
+configurable float pi = 3;
+configurable string num = ?;
 configurable time:TimeOfDay lunchFeedbackStartTime = {hour: 11, minute: 0, second: 0};
 
 public function main() {
