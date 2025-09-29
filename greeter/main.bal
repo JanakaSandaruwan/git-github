@@ -7,7 +7,7 @@ import  ballerina/http as _;
 //     int y;
 // };
 
-// type flexType string|int;
+type flexType string|int;
 
 configurable string greeting = "Hello, World!";
 // configurable int[] | string[] repeatCount = ?;
