@@ -9,7 +9,7 @@ import  ballerina/http as _;
 
 type flexType string|int;
 
-configurable string greeting = "Hello, World!";
+configurable string greeting = "Hello, Test World!";
 // configurable int[] | string[] repeatCount = ?;
 // configurable boolean isEnabled = true;
 configurable float version = 1.0;
