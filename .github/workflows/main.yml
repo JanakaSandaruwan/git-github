@@ -1,0 +1,30 @@
+ name: Runner Check
+
+  on:
+    workflow_dispatch:
+
+  jobs:
+    check:
+      name: Runner allocation check
+      runs-on: ubuntu-24.04
+      timeout-minutes: 5
+      steps:
+        - name: Report queue-to-start delay
+          env:
+            RUN_CREATED: ${{ github.event.repository.updated_at }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            echo "Runner: $RUNNER_OS / $RUNNER_ARCH"
+            echo "Job started at: $(date -u +%FT%TZ)"
+            gh run view ${{ github.run_id }} \
+              --repo ${{ github.repository }} \
+              --json createdAt,startedAt,status \
+              -q '"created=" + .createdAt + " started=" + .startedAt'
+
+        - name: Basic env smoke test
+          run: |
+            node --version
+            yarn --version
+            df -h /
+            nproc
+            free -h
