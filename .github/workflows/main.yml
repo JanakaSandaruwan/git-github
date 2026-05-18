@@ -6,7 +6,7 @@
  jobs:
    check:
      name: Runner allocation check
-     runs-on: ubuntu-24.04
+     runs-on: ubuntu-latest
      timeout-minutes: 5
      steps:
        - name: Report queue-to-start delay
